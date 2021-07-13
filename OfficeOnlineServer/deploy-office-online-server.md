@@ -1,6 +1,6 @@
 ---
 title: Deploy Office Online Server
-description: Explains how to deploy Office Online Server on-premises for use by SharePoint Server 2016, Skype for Business Server, and Exchange Server.
+description: Explains how to deploy Office Online Server on-premises for use by SharePoint Server, Skype for Business Server, and Exchange Server.
 ms.author: samukhe
 author: santanu-wac
 manager: pamgreen
@@ -14,7 +14,7 @@ ms.assetid: e4d51dc4-6460-437d-aa8e-0ae4d3aa8cc5
 
 # Deploy Office Online Server
 
- **Summary:** Explains how to deploy Office Online Server on-premises for use by SharePoint Server 2016, Skype for Business Server, and Exchange Server.
+ **Summary:** Explains how to deploy Office Online Server on-premises for use by SharePoint Server, Skype for Business Server, and Exchange Server.
   
     
     
@@ -38,7 +38,10 @@ Office Online Server is the next version of Office Web Apps Server. Deploying Of
 ## Prepare servers to run Office Online Server
 <a name="prerequisites"> </a>
 
-Perform these procedures on all servers that will run Office Online Server. This server must be Windows Server 2012 R2 or Windows Server 2016. (Note that Windows Server 2016 requires Office Online Server April 2017 or later.)
+Perform these procedures on all servers that will run Office Online Server. This server must be Windows Server 2012 R2 or Windows Server 2016.
+
+> [!IMPORTANT]
+> Windows Server 2016 requires Office Online Server April 2017 or later.
 
 Office Online Server was designed and tested for server operating systems configured with default settings.  If you need to deploy with non-default settings, it is recommended to begin installation and setup with the default settings.  Once the system is verified as working, then incrementally add and test Group Policies, security settings and other modifications.
     
@@ -109,7 +112,7 @@ Complete these steps on any servers that will run Office Online Server.
 ### To install Office Online Server
 
 
-1. Download Office Online Server from the  [Volume Licensing Service Center (VLSC)](http://go.microsoft.com/fwlink/p/?LinkId=256561). Office Online Server is a component of Office, so it is available under each of the product pages including Office Standard 2016, Office Professional Plus 2016, and Office 2015 for Mac Standard.
+1. Download Office Online Server from the  [Volume Licensing Service Center (VLSC)](https://go.microsoft.com/fwlink/p/?LinkId=256561). Office Online Server is a component of Office, so it is available under each of the product pages including Office Standard 2016, Office Professional Plus 2016, and Office 2015 for Mac Standard.
   
   
 2. Run Setup.exe.
@@ -126,7 +129,7 @@ Complete these steps on any servers that will run Office Online Server.
 5. When Setup finishes installing Office Online Server, choose **Close**.
     
   
-6. If you're planning to use Kerberos Constrained Delegation with Excel Online, then, in **Services**, set the **Claims to Windows Token Service** [to start automatically](https://go.microsoft.com/fwlink/p/?LinkId=620769) on this server.
+6. If you're planning to use Kerberos Constrained Delegation with Excel Online, then, in **Services**, set the **Claims to Windows Token Service** [to start automatically](/previous-versions/windows-identity-foundation/ee517278(v=msdn.10)) on this server.
     
   
 If you plan to use Kerberos Constrained Delegation with Excel Online, be sure to add each server in the Office Online Server farm to the Active Directory Domain Services delegation list.
@@ -146,7 +149,7 @@ To install the language packs, follow these steps.
     
     
 
-1. Download the Office Online Server Language Packs from the  [Microsoft Download Center](http://go.microsoft.com/fwlink/p/?LinkId=798136).
+1. Download the Office Online Server Language Packs from the  [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=798136).
     
   
 2. Run **wacserverlanguagepack.exe**.
@@ -179,7 +182,8 @@ Follow the procedures in one of the following three sections, based on what kind
     
 
 > [!TIP]
-> If Microsoft PowerShell doesn't recognize the **New-OfficeWebAppsFarm** cmdlet when you run it, you may need to import the **OfficeWebApps** module. Use this command:>  `Import-Module -Name OfficeWebApps`
+> If Microsoft PowerShell doesn't recognize the **New-OfficeWebAppsFarm** cmdlet when you run it, you may need to import the **OfficeWebApps** module. Use this command:
+> `Import-Module -Name OfficeWebApps`
   
     
     
@@ -220,7 +224,7 @@ New-OfficeWebAppsFarm -InternalURL "http://servername" -AllowHttp -EditingEnable
 - **-AllowHttp** configures the farm to use HTTP.
     
   
-- **-EditingEnabled** enables editing in Office Online when used with SharePoint Server 2016. This parameter isn't used by Skype for Business Server 2015 or Exchange Server because those hosts don't support editing.
+- **-EditingEnabled** enables editing in Office Online when used with SharePoint Server. This parameter isn't used by Skype for Business Server 2015 or Exchange Server because those hosts don't support editing.
     
   
 
@@ -290,9 +294,12 @@ The farm is now ready to provide Office Online functionality to hosts over HTTP.
     
 
 -  [Configure Office Online Server for SharePoint Server 2016](configure-office-online-server-for-sharepoint-server-2016/configure-office-online-server-for-sharepoint-server-2016.md)
+
+> [!NOTE]
+> This also applies to SharePoint Server 2019.
     
   
--  [Office Online Server integration with Exchange](https://go.microsoft.com/fwlink/p/?LinkId=620075)
+-  [Office Online Server integration with Exchange](/Exchange/plan-and-deploy/install-office-online-server)
     
   
 
@@ -303,7 +310,7 @@ For most production environments, we strongly recommend the use of HTTPS for its
   
     
     
-This Office Online Server farm will provide Office Online functionality to SharePoint Server 2016, Skype for Business Server 2015, and Exchange Server 2016.
+This Office Online Server farm will provide Office Online functionality to SharePoint Server, Skype for Business Server 2015, and Exchange Server 2016.
   
     
     
@@ -333,7 +340,7 @@ New-OfficeWebAppsFarm -InternalUrl "https://server.contoso.com" -ExternalUrl "ht
 - **-CertificateName** is the friendly name of the certificate.
     
   
-- **-EditingEnabled** is optional and enables editing in Office Online when used with SharePoint Server 2016. This parameter isn't used by Skype for Business Server 2015 or Exchange Server because those hosts don't support editing.
+- **-EditingEnabled** is optional and enables editing in Office Online when used with SharePoint Server. This parameter isn't used by Skype for Business Server 2015 or Exchange Server because those hosts don't support editing.
     
   
 
@@ -390,8 +397,10 @@ The farm is now ready to provide Office Online functionality to hosts over HTTPS
 
 -  [Configure Office Online Server for SharePoint Server 2016](configure-office-online-server-for-sharepoint-server-2016/configure-office-online-server-for-sharepoint-server-2016.md)
     
-  
--  [Office Online Server integration with Exchange](https://go.microsoft.com/fwlink/p/?LinkId=620075)
+> [!NOTE]
+> This also applies to SharePoint Server 2019.
+
+-  [Office Online Server integration with Exchange](/Exchange/plan-and-deploy/install-office-online-server)
     
   
 
@@ -402,7 +411,7 @@ If you anticipate lots of traffic to your Office Online Server farm, and you wan
   
     
     
-Before you begin, make sure your load balancer is configured. Also, you'll need to install a certificate on the load balancer. This Office Online Server farm will provide Office Online functionality to SharePoint Server 2016, Skype for Business Server 2015, and Exchange Server 2016.
+Before you begin, make sure your load balancer is configured. Also, you'll need to install a certificate on the load balancer. This Office Online Server farm will provide Office Online functionality to SharePoint Server, Skype for Business Server 2015, and Exchange Server 2016.
   
     
     
@@ -433,7 +442,7 @@ New-OfficeWebAppsFarm -InternalUrl "https://server.contoso.com" -ExternalUrl "ht
 - **-SSLOffloaded** enables offloading SSL termination to the load balancer.
     
   
-- **-EditingEnabled** is optional and enables editing in Office Online when used with SharePoint Server 2016. This parameter isn't used by Skype for Business Server 2015 or Exchange Server because those hosts don't support editing.
+- **-EditingEnabled** is optional and enables editing in Office Online when used with SharePoint Server. This parameter isn't used by Skype for Business Server 2015 or Exchange Server because those hosts don't support editing.
     
   
 
@@ -489,9 +498,11 @@ The farm is now ready to provide Office Online functionality to hosts over HTTPS
     
 
 -  [Configure Office Online Server for SharePoint Server 2016](configure-office-online-server-for-sharepoint-server-2016/configure-office-online-server-for-sharepoint-server-2016.md)
-    
+
+> [!NOTE]
+> This also applies to SharePoint Server 2019.
   
--  [Office Online Server integration with Exchange](https://go.microsoft.com/fwlink/p/?LinkId=620075)
+-  [Office Online Server integration with Exchange](/Exchange/plan-and-deploy/install-office-online-server)
     
   
 
@@ -505,9 +516,6 @@ If features of the .NET Framework 4.6 were installed and then removed, you might
  **For Windows Server 2012 R2 or Windows Server 2016**
   
     
-    
-
-
 
 ```
 
@@ -522,4 +530,5 @@ Add-WindowsFeature NET-Framework-45-Core, NET-Framework-45-ASPNET, Web-Asp-Net45
      
 [Office Online Server release schedule](office-online-server-release-schedule.md)
  
-[Plan Office Online Server](https://docs.microsoft.com/en-us/officeonlineserver/plan-office-online-server) 
+
+[Plan Office Online Server](./plan-office-online-server.md)

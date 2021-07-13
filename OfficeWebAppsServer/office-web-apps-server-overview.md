@@ -1,4 +1,4 @@
-﻿---
+---
 title: Office Web Apps Server overview
 TOCTitle: 'Overview: Office Web Apps Server'
 ms:assetid: 4b199a88-387f-4121-820d-7af580e2a3e8
@@ -85,7 +85,7 @@ To help address these issues, and to improve the overall experience of anyone wh
 
   - Users who have appropriate privileges can scroll through a PowerPoint presentation independent of the presentation itself. For example, while Ken Myer is presenting his slide show, Pilar Ackerman can scroll through and view any slide she wishes, all without affecting Ken's presentation.
 
-For more information about how to configure Lync Server 2013 to use Office Web Apps Server, see [Deploying Office Web Apps Server and Lync Server 2013](https://go.microsoft.com/fwlink/p/?linkid=256902).
+For more information about how to configure Lync Server 2013 to use Office Web Apps Server, see [Deploying Office Web Apps Server and Lync Server 2013](/previous-versions/office/lync-server-2013/lync-server-2013-enabling-office-web-apps-server-and-lync-server-2013).
 
 ## How Office Web Apps Server enables users to view Office files in shared folders and websites by using Online Viewers
 
@@ -97,7 +97,7 @@ You can find more about Online Viewers in [Planning for Online Viewers](plan-off
 
 
 > [!NOTE]
-> Microsoft hosts an Internet-only facing version of Create URL on <A href="http://go.microsoft.com/fwlink/?linkid=256548%26clcid=0x409">Office.com</A>.
+> Microsoft hosts an Internet-only facing version of Create URL on <A href="https://go.microsoft.com/fwlink/?linkid=256548%26clcid=0x409">Office.com</A>.
 
 
 
@@ -109,5 +109,4 @@ You can find more about Online Viewers in [Planning for Online Viewers](plan-off
 [Deploy Office Web Apps Server](deploy-office-web-apps-server.md)  
   
 
-[](deploy-office-web-apps-server.md)
-
+[Deploy Office Web Apps Server](deploy-office-web-apps-server.md)
